@@ -1,0 +1,44 @@
+#TASK1:Provide a Python snippet with a missing parenthesis in a printstatement (e.g., print "Hello"). Use AI to detect and fix the syntaxerror
+def greet():
+    return "Hello, AI Debugging Lab!"
+print(greet())
+assert greet() == "Hello, AI Debugging Lab!"
+assert isinstance(greet(), str)
+assert "AI Debugging" in greet()
+print("All test cases passed successfully!")
+
+#TASK2:Supply a function where an if-condition mistakenly uses =instead of ==. Let AI identify and fix the issue
+def check_number(n):
+    if n == 10:
+        return "Ten"
+    else:
+        return "Not Ten"
+print(check_number(10))
+print(check_number(5))
+assert check_number(10) == "Ten"
+assert check_number(5) == "Not Ten"
+print("All test cases passed successfully!")
+
+#TASK3: Provide code that attempts to open a non-existent file and crashes. Use AI to apply safe error handling
+def read_file(filename):
+    try:
+        with open(filename, 'r') as f:
+            return f.read()
+    except FileNotFoundError:
+        return "File not found!"
+    except Exception as e:
+        return f"Error: {e}"
+print(read_file("nonexistent.txt"))
+
+#TASK4:
+# Bug: Calling an undefined method
+class Car:
+	def start(self):
+		return "Car started"
+my_car = Car()
+print(my_car.start())
+
+#Task5: Provide code that adds an integer and string ("5" + 2) causing a TypeError. Use AI to resolve the bug.
+def add_five(value):
+	return value + 5
+print(add_five(10))
