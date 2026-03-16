@@ -1,0 +1,89 @@
+#TASK 1:
+#generate a student information management module with a student class with attributes name,roll number,branch and add a method display_details() and use a contructor.
+
+class Student:
+    def __init__(self, name, roll_number, branch):
+        self.name = name
+        self.roll_number = roll_number
+        self.branch = branch
+    def display_details(self):
+        print(f"Name: {self.name}")
+        print(f"Roll Number: {self.roll_number}")
+        print(f"Branch: {self.branch}")
+student1 = Student("Alice", "101", "Computer Science")
+student1.display_details()
+student2 = Student("Bob", "102", "Mechanical Engineering")
+student2.display_details()
+
+#TASK 2:
+#generate a function that prints the first 10 multiples of a given number using a both loops and compare and analyze of different looping approaches.
+def print_multiples(number):
+    print("Using for loop:")
+    for i in range(1, 11):
+        print(number * i, end=' ')
+    print("\nUsing while loop:")
+    i = 1
+    while i <= 10:
+        print(number * i, end=' ')
+        i += 1
+print_multiples(10)
+#analysis:
+# The for loop is more concise and easier to read for this specific task, while the while loop provides more control over the iteration process.
+# In this case, the for loop is preferable for its simplicity.
+
+#TASK 3:
+#generate a asic classification system based on age using nested if elif else conditional statements to classify age groups.
+def classify_age(age):
+    if age < 0:
+        return "Invalid age"
+    elif age <= 12:
+        return "Child"
+    elif age <= 19:
+        return "Teenager"
+    elif age <= 59:
+        return "Adult"
+    else:
+        return "Senior Citizen"
+age = int(input("Enter age: "))
+print(classify_age(age))
+
+#TASK 4:
+#generate a function to calculate the sum of the first n natural numbers  and to generate a sum_to_n() function using a while or math formula.
+def sum_to_n(n):
+    """
+    Returns the sum of the first n natural numbers.
+    Using the formula: sum = n * (n + 1) / 2
+    """
+    return n * (n + 1) // 2
+n = int(input("Enter a natural number: "))
+print(f"The sum of the first {n} natural numbers is: {sum_to_n(n)}")
+
+
+#Task 5:
+# generate a function  Bank Account class with methods such as deposit(), withdraw(),and check_balance() with comments explaining each method.
+class BankAccount:
+    def __init__(self, initial_balance=0):
+        self.balance = initial_balance
+
+    def deposit(self, amount):
+        """Deposit money into the account."""
+        self.balance += amount
+        print(f"Deposited ${amount}. New balance: ${self.balance}")
+
+    def withdraw(self, amount):
+        """Withdraw money from the account."""
+        if self.balance >= amount:
+            self.balance -= amount
+            print(f"Withdrew ${amount}. New balance: ${self.balance}")
+        else:
+            print("Insufficient funds.")
+
+    def check_balance(self):
+        """Check the current balance of the account."""
+        print(f"Current balance: ${self.balance}")
+
+# Example usage:
+account = BankAccount(100)
+account.deposit(50)
+account.withdraw(30)
+account.check_balance()
